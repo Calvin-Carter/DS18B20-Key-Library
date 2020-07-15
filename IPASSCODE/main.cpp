@@ -10,4 +10,6 @@ int main(){
 
   auto temp_sensor = DS18B20( datapin );
   temp_sensor.lasered_rom_code();
+  hwlib::wait_ms(15);
+  temp_sensor.password();
 }

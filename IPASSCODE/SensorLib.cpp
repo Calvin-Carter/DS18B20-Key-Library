@@ -23,22 +23,22 @@ void DS18B20::write_byte(uint8_t byte){
 }
 
 uint64_t DS18B20::read_and_write_byte(uint8_t byte){
-  uint64_t read_rom_result = 0;
-  uint8_t temp = 0;
-  int counter = 0;
-  write_byte(0x33);
-  for(int j = 0; j < 8; j++){
-    for(int i =0; i < 8; i++){
-      counter++;
-      write_bit(bit_find(byte,i));
-      hwlib::wait_us(15);
-      datapin.refresh();
-      temp = datapin.read();
-      temp = temp << (counter - 1);
-      read_rom_result = read_rom_result | temp;
-    }
-  }
-  return read_rom_result;
+   uint64_t read_rom_result = 0;
+   uint8_t temp = 0;
+   int counter = 0;
+   write_byte(0x33);
+   for(int j = 0; j < 8; j++){
+     for(int i =0; i < 8; i++){
+       counter++;
+       write_bit(bit_find(byte,i));
+       hwlib::wait_us(15);
+       datapin.refresh();
+       temp = read_slot();
+       temp = temp << (counter - 1);
+       read_rom_result = read_rom_result | temp;
+     }
+   }
+   return read_rom_result;
 }
 
 void DS18B20::write_bit(bool bit){
@@ -84,16 +84,24 @@ void DS18B20::scratchpad(){
   write_byte(0xBE);
 }
 
-//bool DS18B20::password(){
-//  if(input !=   ){
-//    hwlib::cout << "Wrong password" << hwlib::endl
-//  }
-//}
+bool DS18B20::password(){
+  pin_reset();
+  hwlib::wait_ms(1);
+  uint64_t input = read_and_write_byte(0x33);
+  hwlib::cout << "test: " << input << hwlib::endl;
+  if(input ==  86){
+    hwlib::cout << "Correct Password" << hwlib::endl;
+  }
+  else {
+    hwlib::cout << "Incorrect Password" << hwlib::endl;
+  }
+  return 0;
+}
 
 void DS18B20::lasered_rom_code(){
   pin_reset();
   hwlib::wait_ms(1);
-  hwlib::cout << read_and_write_byte(0x33) << hwlib::endl;
+  hwlib::cout << "lasered_rom_code: "<< read_and_write_byte(0x33) << hwlib::endl;
 }
 
 //Functies for temperature
