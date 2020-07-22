@@ -61,6 +61,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_d_s18_b20-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DS18B20 Class Reference</div>  </div>
@@ -74,7 +76,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa4f150ccc93c16442ab823ac069c6f55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#aa4f150ccc93c16442ab823ac069c6f55">DS18B20</a> (hwlib::pin_oc &amp;datapin)</td></tr>
+<tr class="memitem:aa4f150ccc93c16442ab823ac069c6f55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#aa4f150ccc93c16442ab823ac069c6f55">DS18B20</a> (hwlib::pin_oc &amp;<a class="el" href="class_d_s18_b20.html#aa007822f108dc987fccca9bcc34d1ce1">datapin</a>)</td></tr>
 <tr class="memdesc:aa4f150ccc93c16442ab823ac069c6f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of <a class="el" href="class_d_s18_b20.html" title="DS18B20. ">DS18B20</a> class.  <a href="#aa4f150ccc93c16442ab823ac069c6f55">More...</a><br /></td></tr>
 <tr class="separator:aa4f150ccc93c16442ab823ac069c6f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad48d4715b2e545a71eee83e752945c4f"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#ad48d4715b2e545a71eee83e752945c4f">lasered_rom_code</a> (uint8_t byte)</td></tr>
@@ -86,6 +88,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab809f873ca36d094663daaec11644d90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#ab809f873ca36d094663daaec11644d90">print</a> ()</td></tr>
 <tr class="memdesc:ab809f873ca36d094663daaec11644d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print function.  <a href="#ab809f873ca36d094663daaec11644d90">More...</a><br /></td></tr>
 <tr class="separator:ab809f873ca36d094663daaec11644d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a348ca4bda0c742cecf5518c3d5c7303f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#a348ca4bda0c742cecf5518c3d5c7303f">pin_reset</a> ()</td></tr>
+<tr class="memdesc:a348ca4bda0c742cecf5518c3d5c7303f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset Function.  <a href="#a348ca4bda0c742cecf5518c3d5c7303f">More...</a><br /></td></tr>
+<tr class="separator:a348ca4bda0c742cecf5518c3d5c7303f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4fe26d8b5380dd21c480eaf7201582f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#aa4fe26d8b5380dd21c480eaf7201582f">bit_find</a> (uint8_t byte, int position)</td></tr>
+<tr class="memdesc:aa4fe26d8b5380dd21c480eaf7201582f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find correct bit.  <a href="#aa4fe26d8b5380dd21c480eaf7201582f">More...</a><br /></td></tr>
+<tr class="separator:aa4fe26d8b5380dd21c480eaf7201582f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59390a712fcba8099667cf128d725edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#a59390a712fcba8099667cf128d725edb">write_bit</a> (bool bit)</td></tr>
+<tr class="memdesc:a59390a712fcba8099667cf128d725edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write correct bit.  <a href="#a59390a712fcba8099667cf128d725edb">More...</a><br /></td></tr>
+<tr class="separator:a59390a712fcba8099667cf128d725edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32af9d0af0eb93a30a8d7a181e66d331"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#a32af9d0af0eb93a30a8d7a181e66d331">write_byte</a> (uint8_t byte)</td></tr>
+<tr class="memdesc:a32af9d0af0eb93a30a8d7a181e66d331"><td class="mdescLeft">&#160;</td><td class="mdescRight">write byte.  <a href="#a32af9d0af0eb93a30a8d7a181e66d331">More...</a><br /></td></tr>
+<tr class="separator:a32af9d0af0eb93a30a8d7a181e66d331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee223736d7c2738f47434a8f0499922"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#aeee223736d7c2738f47434a8f0499922">read_slot</a> ()</td></tr>
+<tr class="memdesc:aeee223736d7c2738f47434a8f0499922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read slot.  <a href="#aeee223736d7c2738f47434a8f0499922">More...</a><br /></td></tr>
+<tr class="separator:aeee223736d7c2738f47434a8f0499922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa007822f108dc987fccca9bcc34d1ce1"><td class="memItemLeft" align="right" valign="top">hwlib::pin_oc &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s18_b20.html#aa007822f108dc987fccca9bcc34d1ce1">datapin</a></td></tr>
+<tr class="memdesc:aa007822f108dc987fccca9bcc34d1ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data pin.  <a href="#aa007822f108dc987fccca9bcc34d1ce1">More...</a><br /></td></tr>
+<tr class="separator:aa007822f108dc987fccca9bcc34d1ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_d_s18_b20.html" title="DS18B20. ">DS18B20</a>. </p>
@@ -121,6 +147,45 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa4fe26d8b5380dd21c480eaf7201582f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4fe26d8b5380dd21c480eaf7201582f">&#9670;&nbsp;</a></span>bit_find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DS18B20::bit_find </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>byte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find correct bit. </p>
+<p>This function finds the correct bit to write for the function write_byte. This functions requires the place of the bit and a 8-bit number. </p>
+
+</div>
+</div>
 <a id="ad48d4715b2e545a71eee83e752945c4f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad48d4715b2e545a71eee83e752945c4f">&#9670;&nbsp;</a></span>lasered_rom_code()</h2>
 
@@ -162,6 +227,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a348ca4bda0c742cecf5518c3d5c7303f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a348ca4bda0c742cecf5518c3d5c7303f">&#9670;&nbsp;</a></span>pin_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DS18B20::pin_reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset Function. </p>
+<p>The reset functions performs a reset. </p>
+
+</div>
+</div>
 <a id="ab809f873ca36d094663daaec11644d90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab809f873ca36d094663daaec11644d90">&#9670;&nbsp;</a></span>print()</h2>
 
@@ -182,13 +275,125 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aeee223736d7c2738f47434a8f0499922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee223736d7c2738f47434a8f0499922">&#9670;&nbsp;</a></span>read_slot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DS18B20::read_slot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read slot. </p>
+<p>This function makes a read slot which gives a 0 or a 1 back. For more information refer to page 16 of the <a class="el" href="class_d_s18_b20.html" title="DS18B20. ">DS18B20</a> datasheet. </p>
+
+</div>
+</div>
+<a id="a59390a712fcba8099667cf128d725edb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59390a712fcba8099667cf128d725edb">&#9670;&nbsp;</a></span>write_bit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DS18B20::write_bit </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write correct bit. </p>
+<p>This function writes a 1 or 0 to the <a class="el" href="class_d_s18_b20.html" title="DS18B20. ">DS18B20</a>. </p>
+
+</div>
+</div>
+<a id="a32af9d0af0eb93a30a8d7a181e66d331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32af9d0af0eb93a30a8d7a181e66d331">&#9670;&nbsp;</a></span>write_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DS18B20::write_byte </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>byte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>write byte. </p>
+<p>This function writes a byte using the write_bit function. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa007822f108dc987fccca9bcc34d1ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa007822f108dc987fccca9bcc34d1ce1">&#9670;&nbsp;</a></span>datapin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">hwlib::pin_oc&amp; DS18B20::datapin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Data pin. </p>
+<p>The pin setup is located in the main The data wire is used by the functions to communicate with the <a class="el" href="class_d_s18_b20.html" title="DS18B20. ">DS18B20</a>. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_sensor_lib_8hpp_source.html">SensorLib.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 22 2020 22:52:39 for DS18B20 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 22 2020 23:02:36 for DS18B20 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

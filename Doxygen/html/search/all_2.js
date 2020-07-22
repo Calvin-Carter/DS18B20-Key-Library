@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['password',['password',['../class_d_s18_b20.html#a4e6874afdabc19b63f8be30ddceb90f5',1,'DS18B20']]],
-  ['print',['print',['../class_d_s18_b20.html#ab809f873ca36d094663daaec11644d90',1,'DS18B20']]]
+  ['lasered_5from_5fcode',['lasered_rom_code',['../class_d_s18_b20.html#ad48d4715b2e545a71eee83e752945c4f',1,'DS18B20']]]
 ];
