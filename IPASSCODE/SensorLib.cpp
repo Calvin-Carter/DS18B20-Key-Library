@@ -2,7 +2,7 @@
 
 /// @file
 
-void DS18B20::pin_reset(){ // Gives reset pulse, will give back presence of all devices on the bus.
+void DS18B20::pin_reset(){ // Gives reset pulse, will give back presence of all devices on the bus. note: presence will not be used in this library.
     datapin.write(0);
     datapin.flush();
     hwlib::wait_us(480);

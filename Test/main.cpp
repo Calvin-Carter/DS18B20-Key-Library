@@ -15,24 +15,24 @@ int correct_bit_code1[64] = {0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 int correct_bit_code2[64] = {0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0};
 
 int * rom_code;
-rom_code = temp_sensor.read_and_write_byte(0x33);
+rom_code = temp_sensor.lasered_rom_code(0x33);
 
-int counter1 = 0;
-int counter2 = 0;
+int errorcounter = 0;
+int errorcounter2 = 0;
 
 for(int i = 0; i < 64; i++){
   if(correct_bit_code1[i] != rom_code[i]){
-    counter1++;
+    errorcounter++;
   }
 }
 
 for(int j = 0; j < 64; j++){
   if(correct_bit_code2[j] != rom_code[j]){
-    counter2++;
+    errorcounter2++;
   }
 }
 
-if(counter1 > 0 && counter2 > 0){
+if(errorcounter > 0 && errorcounter2 > 0){
   hwlib::cout << "Error, the 64-Bit ROM code is not correct";
 }
 else {
