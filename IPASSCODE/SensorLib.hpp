@@ -62,11 +62,7 @@ private:
   /// This function makes a read slot which gives a 0 or a 1
   bool read_slot();
 
-  /// \brief
-  /// Password Function.
-  /// \details
-  /// This function compares the correct password with the 64-BIT Lasered ROM code from the connected DS18B20
-  bool password();
+
 
   /// \brief
   /// Read_and_write function.
@@ -85,6 +81,16 @@ public:
   DS18B20( hwlib::pin_oc & datapin ):
   datapin ( datapin )
   {}
+
+
+
+  /// \brief
+  /// Password Function.
+  /// \details
+  /// This function compares the correct password with the 64-BIT Lasered ROM code from the connected DS18B20
+  bool password();
+
+
 
   /// \brief
   /// Print function.
