@@ -1,5 +1,7 @@
 #include "SensorLib.hpp"
 
+/// @file
+
 void DS18B20::pin_reset(){ // Gives reset pulse, will give back presence of all devices on the bus.
     datapin.write(0);
     datapin.flush();
@@ -63,12 +65,12 @@ void DS18B20::write_byte(uint8_t byte){
 
 
 
-int * DS18B20::read_and_write_byte(uint8_t byte){
+int * DS18B20::lasered_rom_code(uint8_t byte){
    pin_reset();
    hwlib::wait_ms(1);
    int static rom_code[64];
    int counter = 0;
-   write_byte(0x33);
+   write_byte(0x33); //0x33 is a read rom command
    for(int j = 0; j < 8; j++){
      for(int i =0; i < 8; i++){
        counter++;
@@ -76,6 +78,8 @@ int * DS18B20::read_and_write_byte(uint8_t byte){
        rom_code[counter - 1] = read_slot();
      }
    }
+   //These swaps put the lasered rom code back in the right order,
+   //this is neccessary because the lasered rom code gets reversed and swapped around while trying to read it out.
      std::swap(rom_code[7], rom_code[0]);
      std::swap(rom_code[6], rom_code[1]);
      std::swap(rom_code[5], rom_code[2]);
@@ -116,7 +120,7 @@ return rom_code;
 
 void DS18B20::print(){
   int * rom_code;
-  rom_code = read_and_write_byte(0x33);
+  rom_code = lasered_rom_code(0x33); //0x33 is a read_rom command
   hwlib::cout << "Lasered_Rom_Code: " << hwlib::endl;
   for(int i = 0; i < 64; i++){
     hwlib::cout << rom_code[i];
@@ -130,7 +134,7 @@ bool DS18B20::password(){
   int counter = 0;
   int correct_password[64] = {0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1};
   int * rom_code;
-  rom_code = read_and_write_byte(0x33);
+  rom_code = lasered_rom_code(0x33);
 
   for(int i = 0; i < 64; i++){
     if(correct_password[i] == rom_code[i]){

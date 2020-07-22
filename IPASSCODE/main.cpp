@@ -1,7 +1,9 @@
 #include "SensorLib.hpp"
 
+/// @file
+
 int main(){
-  hwlib::wait_ms(2000);
+  hwlib::wait_ms(2000); //this wait is here because the arduino takes a few seconds to connect
   namespace target = hwlib::target;
   WDT->WDT_MR = WDT_MR_WDDIS; // Kill watchdogs
 
@@ -14,17 +16,15 @@ int main(){
 
   auto temp_sensor = DS18B20( datapin );
   auto i2c_bus     = hwlib::i2c_bus_bit_banged_scl_sda( scl,sda );
-  auto screen = hwlib::glcd_oled( i2c_bus, 0x3c );
+  auto screen      = hwlib::glcd_oled( i2c_bus, 0x3c );
   auto font        = hwlib::font_default_8x8();
   auto display     = hwlib::terminal_from( screen, font );
-
-
   screen.clear();
   temp_sensor.print();
 
 
   for(;;){
-  button.refresh();
+  button.refresh(); //refreshes if the button is pressed or not
   while(button.read() == 0){
     if(temp_sensor.password() == 1){
       hwlib::cout << hwlib::endl;
@@ -36,7 +36,7 @@ int main(){
       display << "Welcome User";
       screen.flush();
       temp_sensor.print();
-      hwlib::wait_ms(5000);
+      hwlib::wait_ms(5000); //makes text appear every 5 seconds for clearance.
     }
     else if(temp_sensor.password() == 0){
       hwlib::cout << hwlib::endl;
@@ -52,7 +52,7 @@ int main(){
       display << "     x   x" << '\n';
       screen.flush();
       temp_sensor.print();
-      hwlib::wait_ms(5000);
+      hwlib::wait_ms(5000); //makes text appear every 5 seconds for clearance.
       }
   }
   display << '\f' << "Insert Key " << '\n';
