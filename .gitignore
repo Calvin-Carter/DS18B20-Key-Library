@@ -30,3 +30,18 @@
 *.exe
 *.out
 *.app
+
+
+# Linker files hwlib
+#Makefile.due
+Makefile.link
+Makefile.native
+makefile.mfd
+
+
+# Compailer files
+main.bin
+main.elf
+main.ld
+main.map
+bmptk_fixed_size_stack.c
